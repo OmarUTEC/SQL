@@ -1,4 +1,7 @@
 # Introducción a SQL
+<p align="center">
+  <img src="sql.avif" />
+</p>
 
 ## ¿Qué es SQL?
 ## Historia
