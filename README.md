@@ -25,34 +25,33 @@ SQL ha evolucionado a lo largo de los años para incluir una variedad de caracte
 
 # Sintaxis Básica de SQL
 
-## Operadores en SQL:
+## Operadores en SQL
+1. `=`: igualdad
+2. `<>` o `!=`: desigualdad
+3. `>`: mayor que
+4. `<`: menor que
+5. `>=`: mayor o igual que
+6. `<=`: menor o igual que
+7. `BETWEEN ... AND ...`: valor entre dos valores específicos
+8. `LIKE`: buscar un patrón específico en una cadena de caracteres
+9. `IN`: buscar si un valor específico se encuentra en una lista
+10. `IS NULL`: buscar valores nulos
+11. `EXISTS`: buscar si una subconsulta devuelve al menos un resultado
+12. `ALL`: compara un valor con todos los valores de una subconsulta
+13. `ANY` o `SOME`: compara un valor con al menos un valor de una subconsulta
 
-. ´=´: igualdad.
-
-. ´<>´ o ´!=´: desigualdad.
-
-. ´>´: mayor que.
-
-. ´<´: menor que.
-
-. ´>=´: mayor o igual que.
-
-. ´<=´: menor o igual que.
-
-. ´BETWEEN ... AND ...´: valor entre dos valores específicos.
-
-. ´LIKE´: buscar un patrón específico en una cadena de caracteres.
-
-. ´IN´: buscar si un valor específico se encuentra en una lista.
-
-. ´IS NULL´: buscar valores nulos.
-
-. ´EXISTS´: buscar si una subconsulta devuelve al menos un resultado
-. ´ALL´: compara un valor con todos los valores de una subconsulta.
-
-. ´ANY´ o ´SOME´: compara un valor con al menos un valor de una subconsulta.
-
-
+## Tipos de datos en SQL
+1. `INT`: número entero
+2. `BIGINT`: número entero de mayor tamaño
+3. `FLOAT`: número con punto flotante
+4. `DOUBLE`: número con punto flotante de mayor precisión
+5. `DECIMAL`: número decimal con precisión específica
+6. `DATE`: fecha (yyyy-mm-dd)
+7. `DATETIME`: fecha y hora (yyyy-mm-dd hh:mm:ss)
+8. `TIMESTAMP`: marca de tiempo (yyyy-mm-dd hh:mm:ss)
+9. `CHAR(n)`: cadena de caracteres fijos de longitud n
+10. `VARCHAR(n)`: cadena de caracteres variables de longitud máxima n
+11. `TEXT`: cadena de caracteres de longitud variable
 
 
 ## Creación de tablas
