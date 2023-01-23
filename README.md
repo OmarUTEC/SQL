@@ -92,11 +92,43 @@ ALTER TABLE clientes
 ADD CONSTRAINT check_telefono CHECK (telefono > 9999999);
 ```
 
-## Inserción de datos
-## Actualización de datos
-## Eliminación de datos
-
 # Consultas Básicas
+
+* *SELECT*: esta es la consulta más básica y se utiliza para seleccionar datos de una tabla. Ejemplo:
+
+```sql
+SELECT * FROM tabla_ejemplo
+```
+
+* *WHERE*: esta cláusula se utiliza para filtrar los resultados de la consulta. Ejemplo:
+
+```sql
+SELECT * FROM tabla_ejemplo WHERE nombre='Juan'
+```
+
+* *ORDER* BY: esta cláusula se utiliza para ordenar los resultados de la consulta. Ejemplo:
+
+```sql
+SELECT * FROM tabla_ejemplo ORDER BY edad DESC
+```
+
+* *INSERT INTO*: esta consulta se utiliza para insertar nuevos registros en una tabla. Ejemplo:
+
+```sql
+INSERT INTO tabla_ejemplo (nombre, edad) VALUES ('Juan', 25)
+```
+
+* *UPDATE*: esta consulta se utiliza para actualizar los datos existentes en una tabla. Ejemplo:
+
+```sql
+UPDATE tabla_ejemplo SET nombre='Juan', edad=26 WHERE id=1
+```
+
+* *DELETE*: esta consulta se utiliza para eliminar registros de una tabla. Ejemplo:
+
+```sql
+DELETE FROM tabla_ejemplo WHERE id=1
+```
 
 ## Selección de datos
 ## Ordenamiento de datos
