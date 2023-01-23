@@ -196,10 +196,58 @@ ON orders.customer_id = customers.customer_id;
 
 **Ten en cuenta que estos son solo ejemplos básicos y pueden variar dependiendo de la estructura de tu base de datos y las necesidades específicas de una determinada consulta.**
 
-## Funciones de agregación
-## Unión de tablas
-## Subconsultas
+## Funciones de agregación comunes
+
+1. **COUNT()**: cuenta el número de filas de una tabla o columna específica.
+
+```sql
+SELECT COUNT(*) FROM orders;
+```
+
+2. **SUM()**: suma el valor de una columna específica.
+
+```sql
+SELECT SUM(price) FROM orders;
+```
+
+3. **AVG()**: calcula el promedio de una columna específica.
+
+```sql
+SELECT AVG(price) FROM orders;
+```
+
+4. **MIN()**: selecciona el valor mínimo de una columna específica.
+
+```sql
+SELECT MIN(price) FROM orders;
+```
+
+5. **MAX()**: selecciona el valor máximo de una columna específica.
+
+```sql
+SELECT MAX(price) FROM orders;
+```
+
+6. **GROUP_CONCAT()**: agrupa valores de una columna y los concatena en una sola cadena de texto.
+
+```sql
+SELECT GROUP_CONCAT(product_name) FROM orders;
+```
+
+7. **CAST()**: convierte un valor de un tipo de datos a otro.
+
+```sql
+SELECT CAST(price AS INT) FROM orders;
+```
+
+8. **CONCAT()**: Concatena dos o más valores de una columna.
+
+```sql
+SELECT CONCAT(first_name, last_name) FROM customers;
+```
+
 ## Consultas anidadas
+ 
 
 # Índices y claves
 
