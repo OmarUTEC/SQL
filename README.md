@@ -94,7 +94,7 @@ ADD CONSTRAINT check_telefono CHECK (telefono > 9999999);
 
 # Consultas Básicas
 
-* *SELECT*: esta es la consulta más básica y se utiliza para seleccionar datos de una tabla. Ejemplo:
+* **SELECT**: esta es la consulta más básica y se utiliza para seleccionar datos de una tabla. Ejemplo:
 
 ```sql
 SELECT * FROM tabla_ejemplo
