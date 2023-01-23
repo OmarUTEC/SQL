@@ -100,31 +100,31 @@ ADD CONSTRAINT check_telefono CHECK (telefono > 9999999);
 SELECT * FROM tabla_ejemplo
 ```
 
-* *WHERE*: esta cláusula se utiliza para filtrar los resultados de la consulta. Ejemplo:
+* **WHERE**: esta cláusula se utiliza para filtrar los resultados de la consulta. Ejemplo:
 
 ```sql
 SELECT * FROM tabla_ejemplo WHERE nombre='Juan'
 ```
 
-* *ORDER* BY: esta cláusula se utiliza para ordenar los resultados de la consulta. Ejemplo:
+* **ORDER** BY: esta cláusula se utiliza para ordenar los resultados de la consulta. Ejemplo:
 
 ```sql
 SELECT * FROM tabla_ejemplo ORDER BY edad DESC
 ```
 
-* *INSERT INTO*: esta consulta se utiliza para insertar nuevos registros en una tabla. Ejemplo:
+* **INSERT INTO**: esta consulta se utiliza para insertar nuevos registros en una tabla. Ejemplo:
 
 ```sql
 INSERT INTO tabla_ejemplo (nombre, edad) VALUES ('Juan', 25)
 ```
 
-* *UPDATE*: esta consulta se utiliza para actualizar los datos existentes en una tabla. Ejemplo:
+* **UPDATE**: esta consulta se utiliza para actualizar los datos existentes en una tabla. Ejemplo:
 
 ```sql
 UPDATE tabla_ejemplo SET nombre='Juan', edad=26 WHERE id=1
 ```
 
-* *DELETE*: esta consulta se utiliza para eliminar registros de una tabla. Ejemplo:
+* **DELETE**: esta consulta se utiliza para eliminar registros de una tabla. Ejemplo:
 
 ```sql
 DELETE FROM tabla_ejemplo WHERE id=1
