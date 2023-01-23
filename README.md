@@ -62,13 +62,14 @@ SQL ha evolucionado a lo largo de los años para incluir una variedad de caracte
 
 3. Especificar los campos de la tabla: cada campo debe ser especificado con un nombre, un tipo de dato y cualquier restricción necesaria. Por ejemplo:
 
-
+```sql
 CREATE TABLE clientes (
     id INT NOT NULL PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     direccion VARCHAR(255) NOT NULL,
     telefono INT NOT NULL
 );
+```
 
 
 4. Ejecutar la sentencia: una vez que hayas creado la sentencia CREATE TABLE, debes ejecutarla para que se cree la tabla en la base de datos.
