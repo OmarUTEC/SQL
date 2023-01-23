@@ -246,17 +246,85 @@ SELECT CAST(price AS INT) FROM orders;
 SELECT CONCAT(first_name, last_name) FROM customers;
 ```
 
-## Consultas anidadas
- 
+# Claves
 
-# Índices y claves
+* **Claves**: Una clave es una columna o conjunto de columnas en una tabla que se utilizan para identificar de manera única una fila en la tabla. Las claves son importantes en SQL debido a que garantizan la integridad referencial entre las tablas.
 
-## Rendimiento de consultas
-## Integridad de datos
+* **Clave primaria**: Es una clave especial que se utiliza para identificar de manera única una fila en una tabla. Cada tabla debe tener una clave primaria y no puede tener valores nulos.
 
-# Transacciones y Bloqueos
+* **Clave foranea**: Es una clave utilizada para establecer una relación entre dos tablas. La clave foranea se refiere a la clave primaria de otra tabla.
 
-## Transacciones
-## Bloqueos
+# Índices 
 
-# Optimización de consultas
+* **Índice simple**: Es el tipo de índice más básico, se utiliza para buscar valores en una sola columna.
+
+* **Índice compuesto**: Es un tipo de índice que se utiliza para buscar valores en más de una columna.
+
+* **Índice árbol B**: Es un tipo de índice que organiza los datos en una estructura de árbol binario. Este tipo de índice es muy eficiente para buscar valores en grandes tablas.
+
+* **Índice B+**: Es una variante del índice árbol B que se utiliza en muchas bases de datos relacionales. Es una estructura de datos que organiza los datos en un árbol binario, donde todos los datos se almacenan en hojas y tiene un mayor número de punteros a hojas que el índice árbol B, lo que permite una mejor utilización del espacio en disco. 
+
+* **Índice Hash**: Es un tipo de índice que utiliza una función hash para asignar un valor a cada valor en la columna. Es muy eficiente para buscar valores exactos, pero no es tan eficiente para buscar valores similares.
+
+* **Índice espacial**: Es un tipo de índice que se utiliza para buscar datos geoespaciales, como puntos en un mapa.
+
+* **Índice full-text**: Es un tipo de índice que se utiliza para buscar palabras o frases en una columna de texto.
+
+* **Índice temporal**: Es un tipo de índice que se utiliza para buscar valores en una columna de tipo temporal, como fechas y horas.
+
+# Transacciones 
+
+Las transacciones en SQL son un conjunto de operaciones que se ejecutan como una sola unidad de trabajo. Es decir, son un grupo de sentencias SQL que se ejecutan juntas como si fueran una sola sentencia. Si una transacción se ejecuta correctamente, todas las operaciones que la componen se aplican a la base de datos, y si una transacción falla, todas las operaciones que la componen se deshacen (es decir, se revierten).
+
+**Algunas de las características de las transacciones son:**
+
+* **Atomicidad**: Una transacción es una unidad de trabajo atomicidad, es decir, es indivisible. Si una transacción se ejecuta correctamente, todas las operaciones que la componen se aplican a la base de datos. Si una transacción falla, todas las operaciones que la componen se deshacen (es decir, se revierten).
+
+* **Consistencia**: Una transacción mantiene la consistencia de la base de datos. Esto significa que, al final de una transacción, la base de datos debe cumplir con todas las reglas de integridad.
+
+* **Aislamiento**: Las transacciones son aisladas entre sí. Esto significa que, durante la ejecución de una transacción, ninguna otra transacción puede acceder a los datos que están siendo modificados.
+
+* **Durabilidad**: Una vez que una transacción se ha completado correctamente, los cambios que se han realizado en la base de datos son permanentes y resistentes a fallos del sistema.
+
+Para controlar las transacciones en SQL se utilizan las sentencias `BEGIN TRANSACTION`, `COMMIT` y `ROLLBACK`. La sentencia `BEGIN TRANSACTION` inicia una transacción, la sentencia `COMMIT` aplica los cambios de la transacción a la base de datos y la sentencia `ROLLBACK` deshace los cambios de la transacción.
+
+```sql
+BEGIN TRANSACTION;
+-- Sentencias SQL para modificar la base de datos
+-- Por ejemplo:
+UPDATE Customers SET CreditLimit = CreditLimit + 1000 WHERE CustomerID = '1';
+UPDATE Orders SET OrderDate = '2022-01-01' WHERE OrderID = '100';
+-- Comprobar si todas las sentencias se ejecutan correctamente
+IF @@ERROR = 0
+BEGIN
+    COMMIT;
+    PRINT 'Transacción completada con éxito.';
+END
+ELSE
+BEGIN
+    ROLLBACK;
+    PRINT 'Error en la transacción, los cambios se han deshecho.';
+END
+```
+
+**En este ejemplo se esta iniciando una transacción con la sentencia BEGIN TRANSACTION. luego se estan realizando dos actualizaciones de las tablas customers y orders. Se comprueba si todas las sentencias se ejecutan correctamente con la sentencia IF @@ERROR = 0, si se cumple se aplican los cambios con COMMIT y se imprime en pantalla un mensaje de éxito. Si no se cumple se deshacen los cambios con ROLLBACK y se imprime un mensaje de error.**
+
+
+# Triggers
+
+Los **triggers** (o disparadores) son sentencias SQL que se ejecutan automáticamente en respuesta a un evento específico en una tabla o vista de una base de datos. Los eventos comunes que pueden activar un trigger incluyen la inserción, actualización o eliminación de datos en una tabla.
+
+Los triggers se utilizan para automatizar tareas que deben realizarse cada vez que se produce un cambio en los datos. Por ejemplo, puedes utilizar un trigger para actualizar un histórico de cambios, registrar una auditor o una actualización o validar los datos antes de insertarlos o actualizarlos.
+
+```sql
+CREATE TRIGGER tr_Example
+ON dbo.ExampleTable
+AFTER INSERT
+AS
+BEGIN
+    -- Acciones a realizar
+    -- Por ejemplo:
+    INSERT INTO dbo.ExampleHistory (ID, Value, CreatedDate)
+    SELECT ID, Value, GETDATE() FROM inserted;
+END
+```
