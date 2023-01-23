@@ -76,6 +76,22 @@ CREATE TABLE clientes (
 
 Es importante recordar que al crear una tabla, debes tener en cuenta las restricciones de la base de datos, como por ejemplo la longitud de los campos, los tipos de datos y las claves primarias y foraneas para poder relacionar tablas entre si.
 
+## Constraints & restricciones
+
+En SQL, las restricciones son similares a los constraints, ya que ambos se utilizan para garantizar la integridad de los datos en una tabla. 
+
+* `DEFAULT`: establece un valor predeterminado para una columna.
+* `CHECK`: verifica que los valores en una columna cumplan con una condición específica.
+* `NOT NULL`: garantiza que una columna no tenga un valor nulo.
+* `UNIQUE`: garantiza que los valores en una columna sean únicos.
+* `PRIMARY KEY`: establece una clave principal para una tabla y garantiza que los valores en una columna sean únicos e irrepetibles.
+* `FOREIGN KEY`: establece una relación entre dos tablas y garantiza que los datos en una tabla se refieran a datos válidos en otra tabla.
+
+```sql
+ALTER TABLE clientes
+ADD CONSTRAINT check_telefono CHECK (telefono > 9999999);
+```
+
 ## Inserción de datos
 ## Actualización de datos
 ## Eliminación de datos
