@@ -54,7 +54,27 @@ SQL ha evolucionado a lo largo de los años para incluir una variedad de caracte
 11. `TEXT`: cadena de caracteres de longitud variable
 
 
-## Creación de tablas
+# Creación de tablas
+
+1. Conectarse a la base de datos: antes de crear una tabla, es necesario conectarse a la base de datos en la que deseas crearla.
+
+2. Crear una sentencia CREATE TABLE: para crear una tabla, debes utilizar la sentencia CREATE TABLE seguida del nombre de la tabla que deseas crear. Dentro de paréntesis, debes especificar los campos de la tabla, junto con sus tipos de datos y cualquier otra restricción o característica.
+
+3. Especificar los campos de la tabla: cada campo debe ser especificado con un nombre, un tipo de dato y cualquier restricción necesaria. Por ejemplo:
+
+
+CREATE TABLE clientes (
+    id INT NOT NULL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    telefono INT NOT NULL
+);
+
+
+4. Ejecutar la sentencia: una vez que hayas creado la sentencia CREATE TABLE, debes ejecutarla para que se cree la tabla en la base de datos.
+
+Es importante recordar que al crear una tabla, debes tener en cuenta las restricciones de la base de datos, como por ejemplo la longitud de los campos, los tipos de datos y las claves primarias y foraneas para poder relacionar tablas entre si.
+
 ## Inserción de datos
 ## Actualización de datos
 ## Eliminación de datos
