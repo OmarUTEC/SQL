@@ -130,11 +130,71 @@ UPDATE tabla_ejemplo SET nombre='Juan', edad=26 WHERE id=1
 DELETE FROM tabla_ejemplo WHERE id=1
 ```
 
-## Selección de datos
-## Ordenamiento de datos
-## Agrupamiento de datos
-
 # Consultas Avanzadas   
+
+* **JOIN**: Utiliza esta consulta para combinar filas de dos o más tablas en base a una columna común.
+
+```sql
+SELECT * FROM orders
+JOIN customers
+ON orders.customer_id = customers.customer_id;
+```
+
+* **SUBQUERY**: Utiliza esta consulta para seleccionar datos de una tabla en función de otra tabla.
+
+```sql
+SELECT * FROM orders
+WHERE customer_id = (SELECT customer_id FROM customers WHERE country = 'USA');
+```
+
+* **GROUP BY**: Utiliza esta consulta para agrupar los resultados de una consulta en función de una columna específica.
+
+```sql
+SELECT COUNT(*) as total_orders, country FROM orders
+GROUP BY country;
+```
+
+* **HAVING**: Utiliza esta consulta en conjunto con **GROUP BY** para filtrar los resultados de una consulta agrupada en función de una condición específica.
+
+```sql
+SELECT COUNT(*) as total_orders, country FROM orders
+GROUP BY country
+HAVING COUNT(*) > 10;
+```
+
+* **UNION**: Utiliza esta consulta para combinar los resultados de dos o más consultas en una sola tabla.
+
+```sql
+SELECT * FROM orders WHERE country = 'USA'
+UNION
+SELECT * FROM orders WHERE country = 'Canada';
+```
+
+* **EXISTS**: Utiliza esta consulta para verificar si existen datos en una tabla que cumplen con una determinada condición.
+
+```sql
+SELECT * FROM customers
+WHERE EXISTS (SELECT * FROM orders WHERE customers.customer_id = orders.customer_id);
+```
+
+* **INNER JOIN**: Utiliza esta consulta para combinar filas de dos tablas que cumplen una determinada condición.
+
+```sql
+SELECT * FROM orders
+INNER JOIN customers
+ON orders.customer_id = customers.customer_id
+WHERE customers.country = 'USA';
+```
+
+* **OUTER JOIN**: Utiliza esta consulta para combinar filas de dos tablas, incluyendo aquellas que no cumplen con una determinada condición.
+
+```sql
+SELECT * FROM orders
+LEFT OUTER JOIN customers
+ON orders.customer_id = customers.customer_id;
+```
+
+**Ten en cuenta que estos son solo ejemplos básicos y pueden variar dependiendo de la estructura de tu base de datos y las necesidades específicas de una determinada consulta.**
 
 ## Funciones de agregación
 ## Unión de tablas
