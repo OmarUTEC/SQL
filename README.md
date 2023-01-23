@@ -328,3 +328,17 @@ BEGIN
     SELECT ID, Value, GETDATE() FROM inserted;
 END
 ```
+
+# **Autor**
+* 👨‍💻[Omar](https://github.com/OmarUTEC)
+<p align="center">
+  <img src="Tigre.jpg" />
+</p>
+
+# Referencias 
+
+- SQL Tutorial - W3Schools: https://www.w3schools.com/sql/
+- SQL Tutorial - Learn SQL: https://www.sql-tutorial.com/
+- PostgreSQL, The world's most advanced open source database: https://www.postgresql.org/docs/
+- SQL Server Central: https://www.sqlservercentral.com/
+- MySQL :: MySQL 8.0 Reference Manual, https://dev.mysql.com/doc/
