@@ -58,7 +58,7 @@ SQL ha evolucionado a lo largo de los años para incluir una variedad de caracte
 
 1. Conectarse a la base de datos: antes de crear una tabla, es necesario conectarse a la base de datos en la que deseas crearla.
 
-2. Crear una sentencia CREATE TABLE: para crear una tabla, debes utilizar la sentencia CREATE TABLE seguida del nombre de la tabla que deseas crear. Dentro de paréntesis, debes especificar los campos de la tabla, junto con sus tipos de datos y cualquier otra restricción o característica.
+2. Crear una sentencia `CREATE TABLE`: para crear una tabla, debes utilizar la sentencia `CREATE TABLE` seguida del nombre de la tabla que deseas crear. Dentro de paréntesis, debes especificar los campos de la tabla, junto con sus tipos de datos y cualquier otra restricción o característica.
 
 3. Especificar los campos de la tabla: cada campo debe ser especificado con un nombre, un tipo de dato y cualquier restricción necesaria. Por ejemplo:
 
