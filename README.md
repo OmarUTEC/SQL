@@ -320,6 +320,7 @@ Los triggers se utilizan para automatizar tareas que deben realizarse cada vez q
 CREATE TRIGGER tr_Example
 ON dbo.ExampleTable
 AFTER INSERT
+
 AS
 BEGIN
     -- Acciones a realizar
