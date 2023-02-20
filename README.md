@@ -330,6 +330,10 @@ BEGIN
 END
 ```
 
+<p align="center">
+  <img src="resumenSQL.jpeg" />
+</p>
+
 # **Autor**
 * 👨‍💻[Omar](https://github.com/OmarUTEC)
 <p align="center">
