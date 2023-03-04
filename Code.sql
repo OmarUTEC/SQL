@@ -77,4 +77,3 @@ vez que se realice una inserción o actualización en la
  inserción o actualización en la tabla ventas y ejecuta
   la función anterior.
 */
-
